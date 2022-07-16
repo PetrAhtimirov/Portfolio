@@ -83,6 +83,7 @@ a {
         animation-name: preloader-animation-mini;
     }
     .loaded .preloader {
+        width: 0;
         top: 88px;
         height: 88%;
     }
@@ -120,7 +121,7 @@ a {
     100% {
         top: 88px;
         left: 3%;
-        width: 30%;
+        width: 0;
         height: 88%;
     }
 }
@@ -150,8 +151,6 @@ a {
 .logo {
     padding-top: 5px;
 }
-
-/* Text animation */
 
 .logo-text {
     font-size: 2em;
@@ -371,6 +370,9 @@ a {
 @media (max-width: 380px) {
     .container {
         padding: 0 15px;
+    }
+    .dropdown-navigation {
+        padding-left: 20px;
     }
 }
 

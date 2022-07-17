@@ -818,7 +818,7 @@ a {
     height: 36px;
     display: flex;
     justify-content: center;
-    alogn-items: center;
+    align-items: center;
 }
 
 .link-desc {

@@ -794,7 +794,7 @@ a {
     display: flex;
     align-items: center;
     transition: 0.3s;
-    margin-left: 30px;
+    margin-left: 15px;
     position: relative;
     padding-right: 30px;
 }
@@ -817,6 +817,14 @@ a {
 
 .link-desc {
     transition: 0.3s;
+}
+
+.links-border {
+	content: "";
+	display: block;
+	height: 30px;
+	width: 0.02cm;
+	background: gray;
 }
 
 .socials li:hover {

@@ -827,21 +827,27 @@ a {
 	background: gray;
 }
 
-.socials li:hover {
+.socials .link-item:hover {
     transform: scale(1.1);
 }
 
 @media (max-width: 1100px) {
     .socials {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+				justify-content: center;
     }
     .socials a {
         width: 96%;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     .socials li {
         margin-left: 0;
         width: 96%;
     }
+		.links-border {
+			height: 0.02cm;
+			margin-bottom: 10px;
+			width: 90% !important;
+		}
 }

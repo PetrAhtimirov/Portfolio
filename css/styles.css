@@ -614,7 +614,7 @@ a {
 }
 
 .project-card:nth-child(2) .project-image-box {
-	background-image: url("../images/projects-preview/projectstore-prev.png");
+	background-image: url("../images/projects-preview/outline-prev.webp");
 	position: absolute;
 	right: 0;
 }
@@ -640,6 +640,10 @@ a {
 	width: 100%;
 	height: 100%;
 	transition: 0.4s;
+}
+
+.outline-white-mask {
+	background-color: rgba(215, 215, 215, 0.26);
 }
 
 .project-card:hover .white-mask {

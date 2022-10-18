@@ -1,2 +1,2 @@
 # Portfolio
-https://petrahtimirov.github.io/Portfolio/
+https://terkaa21.github.io/Portfolio/

@@ -1,5 +1,6 @@
 /* General styles */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
 @font-face {
 	font-family: Consolas; /* Гарнитура шрифта */
@@ -884,4 +885,67 @@ a {
 		margin-bottom: 10px;
 		width: 90% !important;
 	}
+}
+
+
+/* Projects */
+
+.projects-row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.project-item {
+	border: 1px solid #e8e8e8;
+	border-radius: 15px;
+	overflow: hidden;
+	width: 40%;
+	min-width: 530px;
+	margin: 20px;
+	font-family: 'Montserrat';
+	position: relative;
+}
+
+.project-image {
+	width: 100%;
+}
+
+.project-info {
+	padding: 0px 25px;
+}
+
+.project-item-title {
+	font-weight: 500;
+	font-size: 30px;
+}
+
+.project-item-desc {
+	font-weight: 400;
+	opacity: 0.7;
+}
+
+.date {
+	display: flex;
+	align-items: center;
+}
+
+.date-icon {
+	width: 20px;
+	margin-right: 10px;
+}
+
+.feather {
+	width: 25px;
+}
+
+.project-item-link {
+	opacity: 0.6;
+	position: absolute;
+	bottom: 12px;
+	right: 25px;
+	transition: 0.3s;
+}
+
+.project-item-link:hover {
+	opacity: 1;
 }

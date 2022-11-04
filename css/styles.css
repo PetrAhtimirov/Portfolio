@@ -922,6 +922,10 @@ a {
 	.section-title {
 		margin-left: 12%;
 	}
+	.projects-notification {
+		margin-left: 12%;
+		margin-right: 12%;
+	}
 }
 
 .project-image {
@@ -989,4 +993,31 @@ a {
 	border-radius: 20px;
 	background-color: #F3F3F3;
 	font-size: 17px;
+}
+
+.no-animation {
+	animation: none !important;
+	position: relative;
+}
+
+.nav-projects {
+	display: block !important;
+}
+
+@media (max-width: 880px) {
+	.nav-projects li {
+		font-size: 16px;
+	}
+	.section-title {
+		margin-left: 0;
+		font-size: 30px;
+	}
+	.projects-notification {
+		margin-left: 0;
+		font-size: 16px;
+	}
+	.project-item {
+		min-width: 100px;
+		width: 100%;
+	}
 }

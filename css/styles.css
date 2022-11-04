@@ -1,5 +1,6 @@
 /* General styles */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
 @font-face {
 	font-family: Consolas; /* Гарнитура шрифта */
@@ -610,7 +611,7 @@ a {
 }
 
 .project-card:nth-child(1) .project-image-box {
-	background-image: url("../images/projects-preview/kvantorium-prev.png");
+	background-image: url("../images/projects-preview/kvantorium-prev.webp");
 }
 
 .project-card:nth-child(2) .project-image-box {
@@ -883,5 +884,140 @@ a {
 		height: 0.02cm;
 		margin-bottom: 10px;
 		width: 90% !important;
+	}
+}
+
+
+/* Projects */
+
+.projects-row {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+	margin-bottom: 100px;
+}
+
+.project-item {
+	border: 1px solid #e8e8e8;
+	border-radius: 15px;
+	overflow: hidden;
+	width: 48%;
+	min-width: 500px;
+	font-family: 'Montserrat';
+	position: relative;
+	transition: 0.5s;
+}
+
+.project-item:hover {
+	-webkit-box-shadow: 0px 0px 68px -7px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 0px 0px 68px -7px rgba(34, 60, 80, 0.2);
+	box-shadow: 0px 0px 68px -7px rgba(34, 60, 80, 0.2);
+}
+
+@media (max-width: 1160px) {
+	.project-item {
+		width: 75%;
+	}
+	.section-title {
+		margin-left: 12%;
+	}
+	.projects-notification {
+		margin-left: 12%;
+		margin-right: 12%;
+	}
+}
+
+.project-image {
+	width: 100%;
+}
+
+.project-info {
+	padding: 0px 25px;
+}
+
+.project-item-title {
+	font-weight: 500;
+	font-size: 30px;
+}
+
+.project-item-desc {
+	font-weight: 400;
+	opacity: 0.7;
+}
+
+.date {
+	display: flex;
+	align-items: center;
+}
+
+.date-icon {
+	width: 20px;
+	margin-right: 10px;
+}
+
+.feather {
+	width: 25px;
+}
+
+.project-item-link {
+	opacity: 0.6;
+	position: absolute;
+	bottom: 12px;
+	right: 25px;
+	transition: 0.3s;
+}
+
+.project-item-link:hover {
+	opacity: 1;
+}
+
+.section-title {
+	font-family: 'Montserrat';
+	font-size: 40px;
+}
+
+.projects-conainer {
+	padding: 0 30px;
+}
+
+.github-link {
+	opacity: 0.7;
+	text-decoration: underline;
+}
+
+.projects-notification {
+	padding: 5px 30px;
+	margin-bottom: 30px;
+	width: fit-content;
+	border-radius: 20px;
+	background-color: #F3F3F3;
+	font-size: 17px;
+}
+
+.no-animation {
+	animation: none !important;
+	position: relative;
+}
+
+.nav-projects {
+	display: block !important;
+}
+
+@media (max-width: 880px) {
+	.nav-projects li {
+		font-size: 16px;
+	}
+	.section-title {
+		margin-left: 0;
+		font-size: 30px;
+	}
+	.projects-notification {
+		margin-left: 0;
+		font-size: 16px;
+	}
+	.project-item {
+		min-width: 100px;
+		width: 100%;
 	}
 }

@@ -160,6 +160,7 @@ a {
 .logo-text {
 	font-size: 2em;
 	font-weight: 500;
+	letter-spacing: 1.8px;
 	animation: showText 0.8s ease normal both;
 	animation-delay: 1s;
 	animation-fill-mode: both;
@@ -202,9 +203,10 @@ a {
 }
 
 .navigation li {
+	letter-spacing: 1.8px;
 	margin: 0 10px;
 	padding: 0 5px;
-	font-size: 20px;
+	font-size: 21px;
 	transition: 0.6s;
 	animation: showText 0.8s ease normal both;
 	animation-delay: 1.2s;
@@ -218,10 +220,10 @@ a {
 }
 
 .navigation li:after {
-	bottom: -5px;
+	bottom: -4px;
 	content: "";
 	display: block;
-	height: 2px;
+	height: 1.5px;
 	left: 50%;
 	position: absolute;
 	background: black;
@@ -229,8 +231,8 @@ a {
 	width: 0;
 }
 .navigation li:hover:after {
-	width: 100%;
-	left: 0;
+	width: 93%;
+	left: 3%;
 }
 
 .menu-link {

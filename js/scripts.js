@@ -43,7 +43,7 @@ window.onload = function () {
     cursor.classList.remove('display-none');
     setTimeout(showPage, 500);
     setTimeout(frameLooperName, 1600);
-    setTimeout(frameLooperDesc, 2600);
+    setTimeout(frameLooperDesc, 2900);
 }
 
 window.onbeforeunload = function () {
@@ -52,7 +52,7 @@ window.onbeforeunload = function () {
 }
 
 /* Typing text name animation */
-let stringName = "Пётр Ахтимиров";
+let stringName = "Petr Ahtimirov";
 let arrayName = stringName.split("");
 let timerName;
 
@@ -62,7 +62,7 @@ function frameLooperName () {
     } else {
         clearTimeout(timerName);
     }
-    setTimeout('frameLooperName()',70);
+    setTimeout('frameLooperName()', 75);
 }
 
 /* Typing text description animation */

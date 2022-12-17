@@ -131,6 +131,15 @@ a {
 	}
 }
 
+@keyframes title-trans {
+	0% {
+		top: 200px;
+	}
+	100% {
+		top: 0;
+	}
+}
+
 /* Header */
 .header {
 	border-bottom: 1px solid #ccc;
@@ -163,7 +172,6 @@ a {
 	letter-spacing: 1.8px;
 	animation: showText 0.8s ease normal both;
 	animation-delay: 1s;
-	animation-fill-mode: both;
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
@@ -422,18 +430,34 @@ a {
 .banner-text {
 	max-width: 800px;
 	min-width: 500px;
-	padding-bottom: 50px;
+	padding-bottom: 120px;
+	padding-right: 5vw;
+	padding-left: 30px;
 }
 
 .banner-text p {
 	margin-bottom: 5px;
 }
 
+
 .person-name {
-	margin: 0;
-	font-size: 60px;
+	overflow: hidden;
+	margin: 0 !important;
+	font-size: calc(60px + (100 + 18 * 0.7) * ((100vw - 320px) / 1980)) !important;
 	font-weight: 800;
+	letter-spacing: 2px;
 	font-family: "Nunito Sans", sans-serif;
+	color:rgba(0, 0, 0, 0);
+	position: relative;
+}
+
+.person-name__fade-effect {
+	color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	animation: title-trans 1s ease normal both;
+	animation-delay: 1.4s;
 }
 
 .person-description {
@@ -458,9 +482,6 @@ a {
 	.banner {
 		height: calc(100vh - 51px);
 	}
-	.person-name {
-		font-size: 46px;
-	}
 	.person-description {
 		font-size: 20px;
 	}
@@ -470,9 +491,6 @@ a {
 }
 
 @media (max-width: 720px) {
-	.person-name {
-		font-size: 38px;
-	}
 	.person-description {
 		font-size: 18px;
 	}

@@ -42,8 +42,7 @@ window.onload = function () {
     bannerContent.classList.remove('display-none');
     cursor.classList.remove('display-none');
     setTimeout(showPage, 500);
-    setTimeout(frameLooperName, 1600);
-    setTimeout(frameLooperDesc, 2900);
+    setTimeout(frameLooperDesc, 2600);
 }
 
 window.onbeforeunload = function () {
@@ -51,22 +50,8 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
 
-/* Typing text name animation */
-let stringName = "Petr Ahtimirov";
-let arrayName = stringName.split("");
-let timerName;
-
-function frameLooperName () {
-    if (arrayName.length > 0) {
-        document.getElementById("name").innerHTML += arrayName.shift();
-    } else {
-        clearTimeout(timerName);
-    }
-    setTimeout('frameLooperName()', 75);
-}
-
 /* Typing text description animation */
-let stringDesc = "Frontend developer";
+let stringDesc = "Creator / Developer / Designer";
 let arrayDesc = stringDesc.split("");
 let timerDesc;
 

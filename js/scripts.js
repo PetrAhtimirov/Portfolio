@@ -42,7 +42,7 @@ window.onload = function () {
     bannerContent.classList.remove('display-none');
     cursor.classList.remove('display-none');
     setTimeout(showPage, 500);
-    setTimeout(frameLooperDesc, 2600);
+    setTimeout(frameLooperDesc, 2700);
 }
 
 window.onbeforeunload = function () {
@@ -61,7 +61,7 @@ function frameLooperDesc () {
     } else {
         clearTimeout(timerDesc);
     }
-    setTimeout('frameLooperDesc()',50);
+    setTimeout('frameLooperDesc()',43);
 }
 
 /* Smooth scroll */

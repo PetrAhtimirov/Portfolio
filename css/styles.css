@@ -1,6 +1,7 @@
 /* General styles */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 @font-face {
 	font-family: Consolas; /* Гарнитура шрифта */
@@ -22,7 +23,10 @@ a {
 }
 
 .title {
+	font-family: "Consolas", sans-serif;
+	font-weight: 500;
 	font-size: 32px;
+	letter-spacing: 5px;
 }
 
 .display-none {
@@ -430,9 +434,9 @@ a {
 .banner-text {
 	max-width: 800px;
 	min-width: 500px;
-	padding-bottom: 120px;
+	padding-bottom: 100px;
 	padding-right: 5vw;
-	padding-left: 30px;
+	padding-left: 35px;
 }
 
 .banner-text p {
@@ -443,7 +447,7 @@ a {
 .person-name {
 	overflow: hidden;
 	margin: 0 !important;
-	font-size: calc(60px + (100 + 18 * 0.7) * ((100vw - 320px) / 1980)) !important;
+	font-size: calc(60px + (100 + 18 * 0.7) * ((100vw - 480px) / 1980)) !important;
 	font-weight: 800;
 	letter-spacing: 2px;
 	font-family: "Nunito Sans", sans-serif;
@@ -456,21 +460,22 @@ a {
 	position: absolute;
 	top: 0;
 	left: 0;
-	animation: title-trans 1s ease normal both;
+	animation: title-trans 1.1s ease normal both;
 	animation-delay: 1.4s;
 }
 
 .person-description {
+	opacity: 0.8;
 	font-size: 22px;
 	padding-left: 3px;
 }
 
 .cursor {
-	animation: Blink 0.5s 3.7s infinite;
+	animation: Blink 0.6s 4.2s infinite;
 	animation-timing-function: steps(1, end);
 	animation-direction: alternate;
 	animation-fill-mode: backwards;
-	color: black;
+	color: #5a5a5a;
 	font-size: 22px;
 	font-weight: bold;
 	position: relative;
@@ -521,8 +526,12 @@ a {
 }
 
 .about-text {
+	font-family: "Inter";
+	font-weight: 400;
+	letter-spacing: 1.2px;
+	line-height: 140%;
 	width: 65%;
-	font-size: 20px;
+	font-size: 21px;
 }
 
 .about-photo-box {
@@ -619,56 +628,32 @@ a {
 
 .projects-list {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: wrap;
 	margin-top: 50px;
 	width: 100%;
 }
 
 .project-card {
 	position: relative;
-	height: 360px;
-	margin: 0 50px 100px 50px;
-}
-
-.project-card:nth-child(1) .project-image-box {
-	background-image: url("../images/projects-preview/kvantorium-prev.webp");
-}
-
-.project-card:nth-child(2) .project-image-box {
-	background-image: url("../images/projects-preview/outline-prev.webp");
-	position: absolute;
-	right: 0;
-}
-
-.project-card:nth-child(3) .project-image-box {
-	background-image: url("../images/projects-preview/ipad-redesign-prev.webp");
+	margin-bottom: 30px;
+	width: calc(50% - 20px);
+	text-align: center;
 }
 
 .project-image-box {
-	position: absolute;
-	border-radius: 5px;
-	width: 60%;
-	max-width: 680px;
-	height: 100%;
 	overflow: hidden;
-	bottom: -5px;
-	background-size: cover;
-	background-position: center;
+	border-radius: 5px;
 }
 
-.white-mask {
-	background-color: rgba(215, 215, 215, 0.5);
+.project-image {
 	width: 100%;
-	height: 100%;
-	transition: 0.4s;
+	transition: 0.3s;
+	transform: scale(1.02)
 }
 
-.outline-white-mask {
-	background-color: rgba(215, 215, 215, 0.26);
-}
-
-.project-card:hover .white-mask {
-	background: none;
+.project-image:hover {
+	transform: scale(1.12);
 }
 
 .project-content {
@@ -689,61 +674,39 @@ a {
 	align-items: flex-start;
 }
 
-.project-status {
-	color: gray;
-}
-
 .project-title {
-	font-size: 35px;
-	margin-bottom: 20px;
+	font-family: "Inter";
+	font-size: 23px;
 	font-weight: bold;
+	margin-bottom: 0;
 }
 
-.project-description {
-	background-color: #e8e8e8;
-	padding: 20px;
-	border-radius: 5px;
-	z-index: 2;
-	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+.project-tag {
+	font-family: "Inter";
+	font-weight: 500;
+	letter-spacing: 1.5px;
+	font-size: 12px;
+	color: #8a8a8a;
+}
+
+.tag-kv {
+	color: #ea6c19;
+}
+
+.tag-ipad {
+	color: #9238f1;
+}
+
+.tag-outline {
+	color: #4572f4;
+}
+
+.tag-sketches {
+	color: #808999;
 }
 
 .project-card:nth-child(2) .project-description {
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-.project-tags {
-	display: flex;
-	justify-content: end;
-	list-style-type: none;
-	color: silver;
-	padding: 0;
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
-.project-tags li {
-	margin-left: 15px;
-}
-
-.project-card:nth-child(2) .project-tags li {
-	margin-left: 0;
-	margin-right: 15px;
-}
-
-.project-card:last-child {
-	margin-bottom: 50px;
-}
-
-.project-link {
-	width: 25px;
-	height: 25px;
-	color: gray;
-	transition: 0.3s;
-	margin-left: 10px;
-	margin-right: 10px;
-}
-.project-link:hover {
-	color: black;
 }
 
 .more-works {
@@ -948,9 +911,6 @@ a {
 	}
 }
 
-.project-image {
-	width: 100%;
-}
 
 .project-info {
 	padding: 0px 25px;

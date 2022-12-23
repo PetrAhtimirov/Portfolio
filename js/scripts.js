@@ -1,4 +1,5 @@
 /* Menu dropdown */
+
 let showHideNav =  function () {
     let menu = document.querySelector('.menu');
     let dropdown = document.querySelector('.dropdown-navigation');
@@ -10,25 +11,44 @@ let showHideNav =  function () {
     }
 };
 
-/* Preloader */
-window.onload = function () {
-    setTimeout(frameLooperDesc, 2000);
-}
 
-let stringDesc = "Creator / Developer / Frontender";
-let arrayDesc = stringDesc.split("");
-let timerDesc;
+/* Smooth scroll */
+
+let smoothScroll = function () {
+    const smoothLinks = document.querySelectorAll("a[href^='#']");
+    for (let smoothLink of smoothLinks) {
+        smoothLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = smoothLink.getAttribute("href");
+
+            document.querySelector(id).scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    }
+}
 
 
 /* Typing text description animation */
 
+let stringDesc = "Creator / Designer / Developer";
+let arrayDesc = stringDesc.split("");
+let timerDesc;
+
 function frameLooperDesc () {
-    if (arrayDesc.length > 0) {
-        document.getElementById("desc").innerHTML += arrayDesc.shift();
-    } else {
-        clearTimeout(timerDesc);
+    if (document.getElementById("desc")) {
+        if (arrayDesc.length > 0) {
+            document.getElementById("desc").innerHTML += arrayDesc.shift();
+        } else {
+            clearTimeout(timerDesc);
+        }
+        setTimeout('frameLooperDesc()',43);
     }
-    setTimeout('frameLooperDesc()',43);
+}
+
+window.onload = function () {
+    setTimeout(frameLooperDesc, 2000);
 }
 
 /* Scroll Animations */
@@ -98,23 +118,9 @@ function offset(el) {
 }
 
 scrollAnimations();
+smoothScroll();
 animOnScrollmin();
 animOnScroll();
-
-
-/* Smooth scroll */
-const smoothLinks = document.querySelectorAll("a[href^='#']");
-for (let smoothLink of smoothLinks) {
-    smoothLink.addEventListener("click", function (e) {
-        e.preventDefault();
-        const id = smoothLink.getAttribute("href");
-
-        document.querySelector(id).scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    });
-}
 
 // Animations
 
@@ -163,7 +169,9 @@ let changePageTheme = function (container) {
 
 barba.hooks.enter((data) => {
     window.scrollTo(0, 0);
+    smoothScroll();
     scrollAnimations();
+    var vids = document.querySelectorAll("video"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => {}).catch(error => {}); }; });
 });
 
 barba.init({

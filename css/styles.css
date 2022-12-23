@@ -939,6 +939,8 @@ a {
 .frst-image {
 	width: 100%;
 	margin-bottom: 200px;
+	border-radius: 8px;
+	position: relative;
 }
 
 .project-page-title {
@@ -961,7 +963,7 @@ a {
 	letter-spacing: 2px;
 	font-family: "Inter";
 	text-decoration: underline;
-	transition: 0.4s;
+	transition: 0.3s;
 }
 
 .project-page-link:hover {
@@ -987,4 +989,60 @@ a {
 
 .none-animations {
 	animation: none;
+}
+
+.project-page-content-title {
+	text-align: center;
+}
+
+.ipad-content-title {
+	color: white;
+	font-family: 'Montserrat';
+}
+
+.longshot-container {
+	margin-top: 70px;
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+}
+
+.longshot {
+	width: 100%;
+}
+
+.ipad-video {
+	border-radius: 15px;
+}
+
+.ipad-video-1 {
+	width: 90%;
+	-webkit-box-shadow: 0px 0px 68px 35px rgba(17, 2, 255, 0.2);
+	-moz-box-shadow: 0px 0px 68px 35px rgba(17, 2, 255, 0.2);
+	box-shadow: 0px 0px 68px 35px rgba(17, 2, 255, 0.2);
+}
+
+.ipad-video-2 {
+	margin-top: -32%;
+	margin-left: 30%;
+	width: 70%;
+	-webkit-box-shadow: 0px 0px 68px 35px rgba(255, 2, 2, 0.2);
+	-moz-box-shadow: 0px 0px 68px 35px rgba(255, 2, 2, 0.2);
+	box-shadow: 0px 0px 68px 35px rgba(255, 2, 2, 0.2);
+}
+
+.other-projects {
+	padding: 100px 50px;
+}
+
+.other-projects-title {
+	color: white;
+	font-family: "Inter";
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.other-projects-container {
+	display: flex;
+	flex-wrap: wrap;
 }

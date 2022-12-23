@@ -32,7 +32,7 @@ a {
 .anim-title {
 	transform: translateY(-10px);
 	opacity: 0;
-	transition: 0.4s;
+	transition: 0.5s;
 }
 
 .anim-title._active {
@@ -43,7 +43,7 @@ a {
 .anim-content {
 	transform: scale(0.8);
 	opacity: 0;
-	transition: 0.4s;
+	transition: 0.5s;
 }
 
 .anim-content._active {
@@ -547,14 +547,14 @@ a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 70px 50px 50px 30px;
+	padding: 70px 50px 50px 50px;
 }
 
 .projects-list {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin-top: 50px;
+	margin-top: 60px;
 	width: 100%;
 }
 
@@ -815,10 +815,6 @@ a {
 	font-size: 40px;
 }
 
-.projects-conainer {
-	padding: 0 30px;
-}
-
 .github-link {
 	opacity: 0.7;
 	text-decoration: underline;
@@ -867,4 +863,128 @@ a {
 	background-color: #f3f3f3;
 	z-index: 10;
 	top: -100%;
+}
+
+.container-ps {
+	padding: 30px 50px 150px 50px;
+}
+
+.ps-box {
+	display: flex;
+	justify-content: center;
+	padding: 50px;
+	background-color: #f0f0f0;
+	border-radius: 5px;
+}
+
+.ps-content {
+	font-family: "Inter";
+	font-weight: 400;
+    letter-spacing: 1.2px;
+    line-height: 140%;
+    font-size: 19.9px;
+}
+
+.ps-link {
+	text-decoration: underline;
+}
+
+.page__ipad {
+	background-color: #141414;
+}
+
+.body__main {
+	background-color: #fff;
+}
+
+.header__ipad {
+	background-color: #141414;
+	color: white;
+	border: none;
+}
+
+.navigation__ipad li a {
+	color: white !important;
+}
+
+.navigation__ipad li:after {
+	background: white;
+}
+
+.project-banner {
+	display: flex;
+	justify-content: center;
+}
+
+.ipad-banner {
+	background-color: black;
+}
+
+.banner-image {
+	width: 100%;
+	max-width: 800px;
+	animation: showText 0.8s ease normal both;
+	animation-delay: 0.2s;
+}
+
+.project-information {
+	padding: 100px 50px;
+}
+
+.project-information__content {
+	margin-left: 200px;
+	margin-bottom: 100px;
+}
+
+.frst-image {
+	width: 100%;
+	margin-bottom: 200px;
+}
+
+.project-page-title {
+	font-size: 86px;
+	letter-spacing: 3px;
+	font-family: "Montserrat";
+	max-width: 400px;
+	margin: 0;
+	line-height: 1;
+}
+
+.project-page-desc {
+	font-size: 17px;
+	letter-spacing: 2px;
+	font-family: "Inter";
+}
+
+.project-page-link {
+	font-size: 16px;
+	letter-spacing: 2px;
+	font-family: "Inter";
+	text-decoration: underline;
+	transition: 0.4s;
+}
+
+.project-page-link:hover {
+	color:rgb(158, 164, 182);
+}
+
+.ipad-title {
+	color: white;
+}
+
+.ipad-desc {
+	color: rgb(202, 205, 212);
+}
+
+.ipad-link {
+	color: white;
+}
+
+.project-tag-ipad {
+	font-weight: 600;
+	color: rgb(158, 164, 182);
+}
+
+.none-animations {
+	animation: none;
 }

@@ -1,4 +1,5 @@
 /* Menu dropdown */
+
 let showHideNav =  function () {
     let menu = document.querySelector('.menu');
     let dropdown = document.querySelector('.dropdown-navigation');
@@ -10,38 +11,116 @@ let showHideNav =  function () {
     }
 };
 
-/* Preloader */
-window.onload = function () {
-    setTimeout(frameLooperDesc, 2000);
+
+/* Smooth scroll */
+
+let smoothScroll = function () {
+    const smoothLinks = document.querySelectorAll("a[href^='#']");
+    for (let smoothLink of smoothLinks) {
+        smoothLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = smoothLink.getAttribute("href");
+
+            document.querySelector(id).scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    }
 }
 
+
 /* Typing text description animation */
-let stringDesc = "Creator / Developer / Designer";
+
+let stringDesc = "Creator / Designer / Developer";
 let arrayDesc = stringDesc.split("");
 let timerDesc;
 
 function frameLooperDesc () {
-    if (arrayDesc.length > 0) {
-        document.getElementById("desc").innerHTML += arrayDesc.shift();
-    } else {
-        clearTimeout(timerDesc);
+    if (document.getElementById("desc")) {
+        if (arrayDesc.length > 0) {
+            document.getElementById("desc").innerHTML += arrayDesc.shift();
+        } else {
+            clearTimeout(timerDesc);
+        }
+        setTimeout('frameLooperDesc()',43);
     }
-    setTimeout('frameLooperDesc()',43);
 }
 
-/* Smooth scroll */
-const smoothLinks = document.querySelectorAll("a[href^='#']");
-for (let smoothLink of smoothLinks) {
-    smoothLink.addEventListener("click", function (e) {
-        e.preventDefault();
-        const id = smoothLink.getAttribute("href");
-
-        document.querySelector(id).scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    });
+window.onload = function () {
+    setTimeout(frameLooperDesc, 2000);
 }
+
+/* Scroll Animations */
+
+let scrollAnimations = function () {
+    const animItems = document.querySelectorAll(".anim-content");
+    const animItemsMin = document.querySelectorAll(".anim-title");
+    
+    if (animItems.length > 0) {
+        window.addEventListener('scroll', animOnScroll);
+    }
+
+    if (animItemsMin.length > 0) {
+        window.addEventListener('scroll', animOnScrollmin);
+    }
+}
+
+function animOnScroll() {
+    const animItems = document.querySelectorAll(".anim-content");
+    
+    for (let index = 0; index < animItems.length; index++) {
+        const animItem = animItems[index];
+        const animItemHeight = animItem.offsetHeight;
+        const animItemOffset = offset(animItem).top;
+        const animStart = 2;
+        
+
+        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+        if (animItemHeight > window.innerHeight) {
+            animItemPoint = window.innerHeight - window.innerHeight / animStart;
+        }
+        if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+            animItem.classList.add('_active');
+        } else {
+            //animItem.classList.remove('_active');
+        }
+    }
+}
+
+function animOnScrollmin() {
+    const animItemsMin = document.querySelectorAll(".anim-title");
+
+    for (let index = 0; index < animItemsMin.length; index++) {
+        const animItem = animItemsMin[index];
+        const animItemHeight = animItem.offsetHeight;
+        const animItemOffset = offset(animItem).top;
+        const animStart = 0.6;
+        
+
+        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+        if (animItemHeight > window.innerHeight) {
+            animItemPoint = window.innerHeight - window.innerHeight / animStart;
+        }
+        if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+            animItem.classList.add('_active');
+        } else {
+            //animItem.classList.remove('_active');
+        }
+    }
+}
+
+function offset(el) {
+    const rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft}
+}
+
+scrollAnimations();
+smoothScroll();
+animOnScrollmin();
+animOnScroll();
 
 // Animations
 
@@ -55,7 +134,7 @@ let pageAnimOut = function (container) {
         top: 0
     }), gsap.to(container.querySelector("main"),  {
         duration: 0.5,
-        transform: "translateY(200px)"
+        transform: "translateY(300px) scale(0.85)"
     })
 }
 
@@ -64,16 +143,36 @@ let pageAnimIn = function (container) {
         top: 0,
         duration: 0.4
     }, {
-        top: "100vh",
-        delay: 0.15
+        top: "100vh"
     }), gsap.fromTo(container.querySelector("main"),  {
         duration: 0.5,
-        transform: "translateY(-200px)"
+        transform: "translateY(-300px) scale(0.85)"
     }, {
         delay: 0.25,
-        transform: "translateY(0)"
+        transform: "translateY(0) scale(1)"
     })
 }
+
+let changePageTheme = function (container) {
+    console.log(container.id);
+    let color;
+    if (container.id == "ipad") {
+        color = "#141414";
+    } else if (container.id == "main") {
+        color = "white"
+    }
+    return gsap.to(container,  {
+        background: color
+    })
+   
+}
+
+barba.hooks.enter((data) => {
+    window.scrollTo(0, 0);
+    smoothScroll();
+    scrollAnimations();
+    var vids = document.querySelectorAll("video"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => {}).catch(error => {}); }; });
+});
 
 barba.init({
     transitions: [
@@ -81,75 +180,12 @@ barba.init({
             name: 'base',
             async leave(data) {
                 await pageAnimOut(data.current.container);
+                await changePageTheme(data.next.container);
                 data.current.container.remove();
             },
             async enter(data) {
-                await pageAnimIn(data.next.container);
-            }
-        }
-    ],
-    views: [
-        {
-            namespace: 'home',
-            afterEnter() {
-                
+                await pageAnimIn(data.next.container);   
             }
         }
     ]
 })
-
-/* Scroll Animations */
-
-const animItems = document.querySelectorAll(".anim-content");
-const animItemsMin = document.querySelectorAll(".anim-title");
-
-if (animItems.length > 0) {
-    window.addEventListener('scroll', animOnScroll);
-    window.addEventListener('scroll', animOnScrollmin);
-    function animOnScroll() {
-        for (let index = 0; index < animItems.length; index++) {
-            const animItem = animItems[index];
-            const animItemHeight = animItem.offsetHeight;
-            const animItemOffset = offset(animItem).top;
-            const animStart = 2;
-            
-
-            let animItemPoint = window.innerHeight - animItemHeight / animStart;
-            if (animItemHeight > window.innerHeight) {
-                animItemPoint = window.innerHeight - window.innerHeight / animStart;
-            }
-            if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
-                animItem.classList.add('_active');
-            } else {
-                //animItem.classList.remove('_active');
-            }
-        }
-    }
-
-    function animOnScrollmin() {
-        for (let index = 0; index < animItemsMin.length; index++) {
-            const animItem = animItemsMin[index];
-            const animItemHeight = animItem.offsetHeight;
-            const animItemOffset = offset(animItem).top;
-            const animStart = 0.4;
-            
-
-            let animItemPoint = window.innerHeight - animItemHeight / animStart;
-            if (animItemHeight > window.innerHeight) {
-                animItemPoint = window.innerHeight - window.innerHeight / animStart;
-            }
-            if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
-                animItem.classList.add('_active');
-            } else {
-                //animItem.classList.remove('_active');
-            }
-        }
-    }
-
-    function offset(el) {
-        const rect = el.getBoundingClientRect(),
-            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        return { top: rect.top + scrollTop, left: rect.left + scrollLeft}
-    }
-}

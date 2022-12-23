@@ -11,16 +11,16 @@
     <link rel="shortcut icon" href="images\icons\favicon.png" type="image/png">
 </head>
 <body data-barba="wrapper">
-    <div class="page-content" data-barba="container" data-barba-namespace="IPad">
+    <div class="page-content page__ipad" data-barba="container" data-barba-namespace="IPad" id="ipad">
         <div class="preloader"></div>
         <!-- Header -->
-        <div class="header">
+        <div class="header header__ipad">
             <div class="container container-header">
                 <div class="logo">
-                    <span class="logo-text">Portfolio</span>
+                    <span class="logo-text none-animations">Portfolio</span>
                 </div>
-                <ul class="navigation">
-                    <li>
+                <ul class="navigation navigation__ipad">
+                    <li class="none-animations">
                         <a href="../index.html">Back to main</a>
                     </li>
                 </ul>
@@ -48,9 +48,44 @@
         </ul>
 
         <main>
-            <div class="container">
-                <h1>IPad Air redesign</h1>
-            </div>
+            <section class="project-banner ipad-banner">
+                <img class="banner-image" src="..\images\projects-preview\ipad-redesign-prev.webp" alt="">
+            </section>
+            <section class="project-information">
+                <div class="container">
+                    <div class="project-information__content">
+                        <p class="project-tag project-tag-ipad">PERSONAL PROJECT</p>
+                        <h1 class="project-page-title ipad-title">IPad Air Redesign</h1>
+                        <p class="project-page-desc ipad-desc">Redesign of a IPad buy page.</p>
+                        <a class="project-page-link ipad-link" href="https://petrahtimirov.github.io/IPad-Air-buy-page-redesign/">Go to webpage</a>
+                    </div>
+                    <!--<img class="frst-image" src="..\images\ipad-redesign-images\frst-pic.webp" alt="">-->
+                </div>
+            </section>
+            <section class="project-content">
+                <div class="container">
+                    <div class="frst-image">
+                        <video class="ipad-video ipad-video-1" autoplay muted loop id="myVideo">
+                            <source src="..\images\ipad-redesign-images\frst-vid.mp4" type="video/mp4">
+                        </video>
+                        <video class="ipad-video ipad-video-2" autoplay muted loop id="myVideo">
+                            <source src="..\images\ipad-redesign-images\scnd-vid.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h1 class="project-page-content-title ipad-content-title">Buy page design</h1>
+                    <div class="longshot-container">
+                        <img src="..\images\ipad-redesign-images\longshot.webp" alt="" class="longshot">
+                    </div>
+                </div>
+            </section>
+            <section class="other-projects">
+                <div class="container">
+                    <h1 class="other-projects-title">Check out my other works</h1>
+                    <div class="other-projects-container">
+                        <div class="project-card"></div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 

@@ -141,20 +141,19 @@ let pageAnimOut = function (container) {
 let pageAnimIn = function (container) {
     return gsap.fromTo(container.querySelector(".preloader"),  {
         top: 0,
-        duration: 0.4
+        duration: 0.4,
     }, {
         top: "100vh"
     }), gsap.fromTo(container.querySelector("main"),  {
-        duration: 0.5,
-        transform: "translateY(-300px) scale(0.85)"
+        duration: 0.2,
+        transform: "translateY(-400px) scale(0.85)"
     }, {
-        delay: 0.25,
+        delay: 0.2,
         transform: "translateY(0) scale(1)"
     })
 }
 
 let changePageTheme = function (container) {
-    console.log(container.id);
     let color;
     if (container.id == "ipad") {
         color = "#141414";

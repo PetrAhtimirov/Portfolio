@@ -61,10 +61,10 @@ a {
 
 @keyframes title-trans {
 	0% {
-		top: -200px;
+		transform: translateY(-200px);
 	}
 	100% {
-		top: 0;
+		transform: translateY(0);
 	}
 }
 
@@ -370,23 +370,13 @@ a {
 
 
 .person-name {
-	overflow: hidden;
 	margin: 0 !important;
 	font-size: calc(76px + (100 + 16 * 0.7) * ((100vw - 580px) / 1980)) !important;
 	font-weight: 800;
 	letter-spacing: 2px;
 	font-family: "Nunito Sans", sans-serif;
-	color:rgba(0, 0, 0, 0);
-	position: relative;
-}
-
-.person-name__fade-effect {
 	color: black;
-	position: absolute;
-	top: 0;
-	left: 0;
 	animation: title-trans 1.1s ease normal both;
-	animation-delay: 0.2s;
 }
 
 .person-description {
@@ -593,6 +583,8 @@ a {
 	letter-spacing: 1.5px;
 	font-size: 12px;
 	color: #8a8a8a;
+	animation: showText 0.8s ease normal both;
+	animation-delay: 1.2s;
 }
 
 .tag-kv {
@@ -923,8 +915,25 @@ a {
 .banner-image {
 	width: 100%;
 	max-width: 800px;
-	animation: showText 0.8s ease normal both;
+	animation: bannerImageShow 0.3s linear normal both;
 	animation-delay: 0.2s;
+}
+
+@keyframes bannerImageShow {
+	0% {
+		transform: translateY(-200px) scale(0.5);
+		opacity: 0;
+	}
+	40% {
+		pacity: 1;
+	}
+	60% {
+		transform: translateY(-30px) scale(0.75);
+	}
+	100% {
+		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
 }
 
 .project-information {
@@ -933,14 +942,19 @@ a {
 
 .project-information__content {
 	margin-left: 200px;
-	margin-bottom: 100px;
+	margin-bottom: 30px;
+}
+
+.another-project-information__content {
+	margin-right: 200px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: end;
 }
 
 .frst-image {
 	width: 100%;
-	margin-bottom: 200px;
-	border-radius: 8px;
-	position: relative;
+	border-radius: 8px;	
 }
 
 .project-page-title {
@@ -950,12 +964,17 @@ a {
 	max-width: 400px;
 	margin: 0;
 	line-height: 1;
+	animation: title-trans 1.1s ease normal both;
+	animation-delay: 0.2s;
 }
+
 
 .project-page-desc {
 	font-size: 17px;
 	letter-spacing: 2px;
 	font-family: "Inter";
+	animation: showText 0.8s ease normal both;
+	animation-delay: 1.2s;
 }
 
 .project-page-link {
@@ -964,6 +983,8 @@ a {
 	font-family: "Inter";
 	text-decoration: underline;
 	transition: 0.3s;
+	animation: showText 0.8s ease normal both;
+	animation-delay: 1.6s;
 }
 
 .project-page-link:hover {
@@ -993,6 +1014,7 @@ a {
 
 .project-page-content-title {
 	text-align: center;
+	font-weight: 300;
 }
 
 .ipad-content-title {
@@ -1001,7 +1023,7 @@ a {
 }
 
 .longshot-container {
-	margin-top: 70px;
+	margin-top: 100px;
 	border-radius: 12px;
 	overflow: hidden;
 	position: relative;
@@ -1025,6 +1047,7 @@ a {
 .ipad-video-2 {
 	margin-top: -32%;
 	margin-left: 30%;
+	z-index: 2;
 	width: 70%;
 	-webkit-box-shadow: 0px 0px 68px 35px rgba(255, 2, 2, 0.2);
 	-moz-box-shadow: 0px 0px 68px 35px rgba(255, 2, 2, 0.2);
@@ -1036,13 +1059,96 @@ a {
 }
 
 .other-projects-title {
+	margin-top: 50px;
 	color: white;
 	font-family: "Inter";
+	font-weight: 300;
+	margin-bottom: 80px;
 	letter-spacing: 2px;
 	text-align: center;
 }
 
 .other-projects-container {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-wrap: wrap;
+}
+
+.ipad-another-desc {
+	text-align: end;
+	color: rgb(202, 205, 212);
+	max-width: 400px;
+	margin-bottom: 130px;
+}
+
+.ipad-hr {
+	height: 1px;
+	border: none;
+	background-color: #747c91;
+	width: 90%;
+	text-align: center;
+}
+
+.project-content {
+	padding-top: 30px;
+}
+
+.text-animation-box {
+	overflow: hidden;
+}
+
+.text-animation-box:last-of-type {
+	padding-bottom: 7px;
+}
+
+.other-project-title {
+	font-family: "Inter";
+	font-size: 40px;
+	text-align: center;
+	transition: 0.2s;
+}
+
+.other-project-title:hover {
+	transform: scale(1.12);
+}
+
+.other-ipad-title {
+	color: white;
+}
+
+.other-project-card {
+	max-width: 300px;
+	position: relative;
+}
+
+.separator {
+	height: 60px;
+	width: 1.5px;
+	background-color: gray;
+	transform: rotate(30deg);
+	margin: 0 30px 0 30px;
+}
+
+.kv-other-title:hover {
+	background: -webkit-linear-gradient(45deg, #fa709a 0%, #fee140 100%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+
+.outline-other-title {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.outline-other-title:hover {
+	background: -webkit-linear-gradient(45deg, #e0c3fc 0%, #8ec5fc 100%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+
+.sketches-other-title:hover {
+	background: -webkit-linear-gradient(45deg, #BCC5CE 0%, #929EAD 98%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
 }

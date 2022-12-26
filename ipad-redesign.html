@@ -24,7 +24,7 @@
                     </li>
                 </ul>
                 <a class="menu-link" onclick="showHideNav()">
-                    <div class="menu">
+                    <div class="menu menu__ipad">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -34,21 +34,17 @@
         </div>
 
         <!-- Dropdown Navigation -->
-        <ul class="dropdown-navigation dropdown-navigation-disabled">
+        <ul class="dropdown-navigation dropdown-navigation__ipad dropdown-navigation-disabled">
             <li>
-                <a href="#about-block" onclick="showHideNav()">About</a>
-            </li>
-            <li>
-                <a href="#projects-block"  onclick="showHideNav()">Projects</a>
-            </li>
-            <li>
-                <a href="#contacts-block"  onclick="showHideNav()">Contacts</a>
+                <a href="/index.html" onclick="showHideNav()">Back to main</a>
             </li>
         </ul>
 
         <main>
             <section class="project-banner ipad-banner">
-                <img class="banner-image" src="images\projects-preview\ipad-redesign-prev.webp" alt="">
+                <div class="banner-image-box banner-ipad">
+                    <img class="banner-image" src="images\projects-preview\ipad-redesign-prev.webp" alt="">
+                </div>
             </section>
             <section class="project-information">
                 <div class="container">
@@ -85,7 +81,7 @@
                             redesign the iPad purchase page into glassmorphism.
                         </p>
                     </div>
-                    <hr class="ipad-hr" />
+                    <hr class="ipad-hr anim-hr" />
                 </div>
             </section>
             <section class="project-content">

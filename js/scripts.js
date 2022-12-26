@@ -55,7 +55,7 @@ window.onload = function () {
 
 let scrollAnimations = function () {
     const animItems = document.querySelectorAll(".anim-content");
-    const animItemsMin = document.querySelectorAll(".anim-title");
+    const animItemsMin = document.querySelectorAll(".anim-title", ".anim-hr");
     
     if (animItems.length > 0) {
         window.addEventListener('scroll', animOnScroll);
@@ -89,7 +89,7 @@ function animOnScroll() {
 }
 
 function animOnScrollmin() {
-    const animItemsMin = document.querySelectorAll(".anim-title");
+    const animItemsMin = document.querySelectorAll(".anim-title, .anim-hr");
 
     for (let index = 0; index < animItemsMin.length; index++) {
         const animItem = animItemsMin[index];

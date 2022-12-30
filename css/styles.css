@@ -315,11 +315,6 @@ a {
 		opacity: 0;
 	}
 }
-@media (max-width: 860px) {
-	.banner-image-box {
-		background-size: contain !important;
-	}
-}
 @media (max-width: 749px) {
 	.separator {
 		display: none;
@@ -438,7 +433,7 @@ a {
 	padding-left: 3px;
 }
 
-.cursor {
+.underline-cursor {
 	animation: Blink 0.6s 4.2s infinite;
 	animation-timing-function: steps(1, end);
 	animation-direction: alternate;
@@ -981,6 +976,8 @@ a {
 .project-banner {
 	display: flex;
 	justify-content: center;
+	overflow: hidden;
+	position: relative;
 }
 
 .ipad-banner {
@@ -988,7 +985,6 @@ a {
 }
 
 .banner-image {
-	opacity: 0 !important;
 	width: 100%;
 	max-width: 800px;
 }
@@ -1049,6 +1045,7 @@ a {
 	font-family: "Inter";
 	animation: showText 0.8s ease normal both;
 	animation-delay: 1.2s;
+	color: #636363;
 }
 
 .project-page-link {
@@ -1062,7 +1059,7 @@ a {
 }
 
 .project-page-link:hover {
-	color:rgb(158, 164, 182);
+	color:#8a8a8a;
 }
 
 .ipad-title {
@@ -1075,6 +1072,10 @@ a {
 
 .ipad-link {
 	color: white;
+}
+
+.ipad-link:hover {
+	color:rgb(158, 164, 182);
 }
 
 .project-tag-ipad {
@@ -1134,7 +1135,6 @@ a {
 
 .other-projects-title {
 	margin-top: 50px;
-	color: white;
 	font-family: "Inter";
 	font-weight: 300;
 	margin-bottom: 80px;
@@ -1181,6 +1181,7 @@ a {
 	font-size: 40px;
 	text-align: center;
 	transition: 0.2s;
+	color: #cfcfcf;
 }
 
 .other-project-title:hover {
@@ -1243,10 +1244,16 @@ a {
 	color: white;
 }
 
-.banner-ipad {
-	background-image: url("../images/ipad-redesign-images/banner.webp");
-	background-attachment: fixed;
-	background-position: 50% 10%;
-	background-repeat: no-repeat;
-	background-size: auto;
+.other-projects-title__ipad {
+	color: white;
+}
+
+.ipad-other-title {
+	padding: 0 12px;
+}
+
+.ipad-other-title:hover {
+	background: -webkit-linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
 }

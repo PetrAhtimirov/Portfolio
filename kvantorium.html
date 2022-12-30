@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvantorum Cheb</title>
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="shortcut icon" href="images\icons\favicon.png" type="image/png">
+</head>
+<body data-barba="wrapper">
+    <div class="page-content" data-barba="container" data-barba-namespace="Kvantorium" id="kvantorium">
+        <div class="preloader"></div>
+        <!-- Header -->
+        <div class="header">
+            <div class="container container-header">
+                <div class="logo">
+                    <span class="logo-text none-animations">Portfolio</span>
+                </div>
+                <ul class="navigation">
+                    <li class="none-animations">
+                        <a href="index.html">Back to main</a>
+                    </li>
+                </ul>
+                <a class="menu-link" onclick="showHideNav()">
+                    <div class="menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Dropdown Navigation -->
+        <ul class="dropdown-navigation dropdown-navigation-disabled">
+            <li>
+                <a href="/index.html" onclick="showHideNav()">Back to main</a>
+            </li>
+        </ul>
+
+        <main>
+            <section class="project-banner">
+                <img class="banner-image" src="images\projects-preview\kvantorium-prev.webp" alt="">
+            </section>
+            <section class="project-information">
+                <div class="container">
+                    <div class="project-information__content">
+                        <p class="project-tag">WEB DESIGN & FRONTEND</p>
+                        <div class="text-animation-box">
+                            <h1 class="project-page-title">Kvantorium</h1>
+                        </div>
+                        <div class="text-animation-box">
+                            <h1 class="project-page-title">Cheb</h1>
+                        </div>
+                        <p class="project-page-desc">Creation of a site for "Kvantorium" on the MODX engine.</p>
+                        <a class="project-page-link" href="https://kvantorium21.ru/">Go to webpage</a>
+                    </div>
+                </div>
+            </section>
+            <section class="other-projects">
+                <div class="container">
+                    <h1 class="other-projects-title anim-title">Check out my other works</h1>
+                    <div class="other-projects-container">
+                        <div class="other-project-card">
+                            <a href="">
+                                <h1 class="other-project-title sketches-other-title anim-content">Sketches compilation</h1>
+                            </a>
+                        </div>
+                        <span class="separator"></span>
+                        <div class="other-project-card">
+                            <a href="">
+                                <h1 class="other-project-title outline-other-title anim-content">Outline</h1>
+                            </a>
+                        </div>
+                        <span class="separator"></span>
+                        <div class="other-project-card">
+                            <a href="">
+                                <h1 class="other-project-title ipad-other-title anim-content">IPad Redesign</h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>

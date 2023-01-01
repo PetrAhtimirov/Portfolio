@@ -1257,3 +1257,11 @@ a {
 	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
 }
+
+.parallax-container {
+	overflow: hidden;
+}
+
+.parallax-image {
+	transform: translateY(0);
+}

@@ -924,7 +924,7 @@ a {
 	position: fixed;
 	background-color: #f3f3f3;
 	z-index: 10;
-	top: -100%;
+	top: calc(-100% - 200px);
 }
 
 .container-ps {
@@ -976,8 +976,10 @@ a {
 .project-banner {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	overflow: hidden;
 	position: relative;
+	max-height: 500px;
 }
 
 .ipad-banner {
@@ -1264,4 +1266,8 @@ a {
 
 .parallax-image {
 	transform: translateY(0);
+}
+
+.kvantorium-image {
+	max-width: none;
 }

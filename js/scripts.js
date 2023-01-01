@@ -51,6 +51,45 @@ window.onload = function () {
     setTimeout(frameLooperDesc, 2000);
 }
 
+/* Parallax */
+
+function getCoords(elem) {
+    let box = elem.getBoundingClientRect();
+  
+    return box.top + window.pageYOffset;
+}
+
+let parallax = function () {
+    const parallaxContainers = document.querySelectorAll(".parallax-container");
+    if (parallaxContainers.length > 0) {
+        window.addEventListener('scroll', parallaxOnScroll);
+    }
+}
+
+let parallaxOnScroll = function () {
+    const parallaxContainers = document.querySelectorAll(".parallax-container");
+    let currentScroll = window.pageYOffset;
+    let windowHeight = window.innerHeight;
+
+    for (let i = 0; i < parallaxContainers.length; i++) {
+        let currentContainer = parallaxContainers[i];
+        let parallaxItems = currentContainer.querySelectorAll(".parallax-image")
+        let elementPageMargin = getCoords(currentContainer);
+        let elementHeight = currentContainer.offsetHeight;
+
+        let startParallaxIf = (elementPageMargin + (elementHeight/2)) < (currentScroll + windowHeight);
+        let endParallaxIf = currentScroll < (elementPageMargin + elementHeight);
+
+        if (startParallaxIf && endParallaxIf) {
+            for (let j = 0; j < parallaxItems.length; j++) {
+                let currentTransform = (currentScroll)/2;
+                parallaxItems[i].style.transform = "translateY(" + currentTransform + "px)";
+            }
+        }
+    }
+}
+
+
 /* Scroll Animations */
 
 let scrollAnimations = function () {
@@ -117,6 +156,7 @@ function offset(el) {
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft}
 }
 
+parallax();
 scrollAnimations();
 smoothScroll();
 animOnScrollmin();
@@ -170,6 +210,7 @@ barba.hooks.enter((data) => {
     window.scrollTo(0, 0);
     smoothScroll();
     scrollAnimations();
+    parallax();
     var vids = document.querySelectorAll("video"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => {}).catch(error => {}); }; });
 });
 

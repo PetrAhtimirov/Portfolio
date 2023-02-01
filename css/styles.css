@@ -51,6 +51,17 @@ a {
 	opacity: 1;
 }
 
+.anim-start {
+	transform: scale(0.8);
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.anim-start._active {
+	transform: scale(1);
+	opacity: 1;
+}
+
 .anim-hr {
 	transform: scale(0);
 	transition: 0.5s;
@@ -963,6 +974,9 @@ a {
 	background-color: #141414;
 	color: white;
 	border: none;
+	-webkit-box-shadow: 0px 17px 50px 30px rgb(0 0 0 / 0.3);
+    -moz-box-shadow: 0px 17px 50px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 17px 50px 30px rgb(0 0 0 / 0.3);
 }
 
 .navigation__ipad li a {
@@ -984,6 +998,9 @@ a {
 
 .ipad-banner {
 	background-color: black;
+	-webkit-box-shadow: 0px 17px 100px 59px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 17px 100px 59px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 17px 100px 59px rgba(0, 0, 0, 0.4);
 }
 
 .banner-image {
@@ -1270,4 +1287,104 @@ a {
 
 .kvantorium-image {
 	max-width: none;
+}
+
+.sketches-banner {
+	-webkit-box-shadow: 0px 17px 98px 31px rgba(140, 127, 100, 0.12);
+	-moz-box-shadow: 0px 17px 98px 31px rgba(140, 127, 100, 0.12);
+	box-shadow: 0px 17px 98px 31px rgba(140, 127, 100, 0.12);
+}
+
+.sketches-image {
+	max-width: none;
+}
+
+.sketch-item {
+	display: flex;
+	flex-direction: row-reverse;
+	position: relative;
+}
+
+.sketch-item-reverse {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+.sketch-image {
+	width: calc(100% - 250px);
+	border-radius: 40px;
+	filter: drop-shadow(0px 100px 80px rgba(38,64,131,0.07)) drop-shadow(0px 64.8148px 46.8519px rgba(38,64,131,0.0531481)) drop-shadow(0px 38.5185px 25.4815px rgba(38,64,131,0.0425185)) drop-shadow(0px 20px 13px rgba(38,64,131,0.035)) drop-shadow(0px 8.14815px 6.51852px rgba(38,64,131,0.0274815)) drop-shadow(0px 1.85185px 3.14815px rgba(38,64,131,0.0168519));
+}
+
+.sketch-item .sketch-info {
+	min-width: 280px;
+	text-align: right;
+	position: sticky;
+	top: 20%;
+	height: fit-content;
+}
+
+.sketch-item-reverse .sketch-info {
+	min-width: 280px;
+	text-align: left;
+	position: sticky;
+	top: 20%;
+	height: fit-content;
+}
+
+.sketch-info > h1 {
+	font-family: "Montserrat";
+	letter-spacing: 3px;
+	font-size: 40px;
+	margin-top: 0;
+	margin-bottom: 10px;
+	color: #202020;
+}
+
+.sketch-item hr {
+	margin-left: 70px;
+	border: none;
+	background-color: #ccc;
+	height: 1px;
+}
+
+.sketch-item-reverse hr {
+	margin-right: 70px;
+	border: none;
+	background-color: #ccc;
+	height: 1px;
+}
+
+.sketch-info > p {
+	letter-spacing: 2px;
+    font-family: "Inter";
+	font-size: 17px;
+	color: #636363;
+}
+
+.hytte, .zainoo, .scandi, .nursery, .kvast {
+	margin-bottom: 200px;
+}
+
+.hytte-link {
+	color: #202020;
+	animation: none;
+}
+
+.kvantorium-banner {
+	-webkit-box-shadow: 0px 8px 61px 32px rgba(209, 174, 144, 0.16);
+	-moz-box-shadow: 0px 8px 61px 32px rgba(209, 174, 144, 0.16);
+	box-shadow: 0px 8px 61px 32px rgba(209, 174, 144, 0.16);
+}
+
+.outline-banner {
+	background-color: #F9F9FA;
+	-webkit-box-shadow: 0px 10px 60px 32px rgba(200, 206, 237, 0.18);
+	-moz-box-shadow: 0px 10px 60px 32px rgba(200, 206, 237, 0.18);
+	box-shadow: 0px 10px 60px 32px rgba(200, 206, 237, 0.18);
+}
+
+.cattery-title {
+	font-size: 32px !important;
 }

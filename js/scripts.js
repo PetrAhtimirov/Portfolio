@@ -51,6 +51,7 @@ window.onload = function () {
     setTimeout(frameLooperDesc, 2000);
 }
 
+
 /* Parallax */
 
 function getCoords(elem) {
@@ -90,11 +91,18 @@ let parallaxOnScroll = function () {
 }
 
 
+/* Scroll Change Background Color */
+
+let scrollChangeBackground = function () {
+    const triggerItems = document.querySelectorAll();
+}
+
 /* Scroll Animations */
 
 let scrollAnimations = function () {
     const animItems = document.querySelectorAll(".anim-content");
     const animItemsMin = document.querySelectorAll(".anim-title", ".anim-hr");
+    const animItemsStart = document.querySelectorAll(".anim-start");
     
     if (animItems.length > 0) {
         window.addEventListener('scroll', animOnScroll);
@@ -102,6 +110,10 @@ let scrollAnimations = function () {
 
     if (animItemsMin.length > 0) {
         window.addEventListener('scroll', animOnScrollmin);
+    }
+
+    if (animItemsStart.length > 0) {
+        window.addEventListener('scroll', animOnScrollstart);
     }
 }
 
@@ -149,6 +161,28 @@ function animOnScrollmin() {
     }
 }
 
+function animOnScrollstart() {
+    const animItemsStart = document.querySelectorAll(".anim-start");
+
+    for (let index = 0; index < animItemsStart.length; index++) {
+        const animItem = animItemsStart[index];
+        const animItemHeight = animItem.offsetHeight;
+        const animItemOffset = offset(animItem).top;
+        const animStart = 4;
+        
+
+        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+        if (animItemHeight > window.innerHeight) {
+            animItemPoint = window.innerHeight - window.innerHeight / animStart;
+        }
+        if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+            animItem.classList.add('_active');
+        } else {
+            //animItem.classList.remove('_active');
+        }
+    }
+}
+
 function offset(el) {
     const rect = el.getBoundingClientRect(),
         scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
@@ -160,7 +194,9 @@ parallax();
 scrollAnimations();
 smoothScroll();
 animOnScrollmin();
+animOnScrollstart();
 animOnScroll();
+
 
 // Animations
 
@@ -186,7 +222,7 @@ let pageAnimIn = function (container) {
         top: "100vh"
     }), gsap.fromTo(container.querySelector("main"),  {
         duration: 0.2,
-        transform: "translateY(-400px) scale(0.85)"
+        transform: "translateY(-500px) scale(0.85)"
     }, {
         delay: 0.2,
         transform: "translateY(0) scale(1)"

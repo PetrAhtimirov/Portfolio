@@ -22,6 +22,10 @@ a {
 	color: black;
 }
 
+main {
+	position: relative;
+}
+
 .title {
 	font-family: "Consolas", sans-serif;
 	font-weight: 500;
@@ -1302,6 +1306,7 @@ a {
 .sketch-item {
 	display: flex;
 	flex-direction: row-reverse;
+	justify-content: center;
 	position: relative;
 }
 
@@ -1314,7 +1319,6 @@ a {
 .sketch-image {
 	width: calc(100% - 250px);
 	border-radius: 40px;
-	filter: drop-shadow(0px 100px 80px rgba(38,64,131,0.07)) drop-shadow(0px 64.8148px 46.8519px rgba(38,64,131,0.0531481)) drop-shadow(0px 38.5185px 25.4815px rgba(38,64,131,0.0425185)) drop-shadow(0px 20px 13px rgba(38,64,131,0.035)) drop-shadow(0px 8.14815px 6.51852px rgba(38,64,131,0.0274815)) drop-shadow(0px 1.85185px 3.14815px rgba(38,64,131,0.0168519));
 }
 
 .sketch-item .sketch-info {
@@ -1363,8 +1367,12 @@ a {
 	color: #636363;
 }
 
-.hytte, .zainoo, .scandi, .nursery, .kvast {
+.hytte, .zainoo, .scandi, .kvast {
 	margin-bottom: 200px;
+}
+
+.nursery {
+	margin-bottom: 100px;
 }
 
 .hytte-link {
@@ -1387,4 +1395,63 @@ a {
 
 .cattery-title {
 	font-size: 32px !important;
+}
+
+.main-leave-animation {
+	transition: 0.4s;
+	transform: translateY(200px) scale(0.85);
+}
+
+.hytte-image {
+	filter: drop-shadow(0px 100px 80px rgba(25,63,108,0.07)) drop-shadow(0px 64.8148px 46.8519px rgba(25,63,108,0.0531481)) drop-shadow(0px 38.5185px 25.4815px rgba(25,63,108,0.0425185)) drop-shadow(0px 20px 13px rgba(25,63,108,0.035)) drop-shadow(0px 8.14815px 6.51852px rgba(25,63,108,0.0274815)) drop-shadow(0px 1.85185px 3.14815px rgba(25,63,108,0.0168519));
+}
+
+.zainoo-image {
+	filter: drop-shadow(0px 100px 80px rgba(122,129,166,0.12)) drop-shadow(0px 64.8148px 46.8519px rgba(122,129,166,0.10)) drop-shadow(0px 38.5185px 25.4815px rgba(122,129,166,0.08)) drop-shadow(0px 20px 13px rgba(122,129,166,0.06)) drop-shadow(0px 8.14815px 6.51852px rgba(122,129,166,0.03)) drop-shadow(0px 1.85185px 3.14815px rgba(122,129,166,0.01));
+}
+
+.scandi-image {
+	filter: drop-shadow(0px 100px 80px rgba(122,129,166,0.12)) drop-shadow(0px 64.8148px 46.8519px rgba(122,129,166,0.10)) drop-shadow(0px 38.5185px 25.4815px rgba(137,40,40,0.08)) drop-shadow(0px 20px 13px rgba(137,40,40,0.06)) drop-shadow(0px 8.14815px 6.51852px rgba(137,40,40,0.03)) drop-shadow(0px 1.85185px 3.14815px rgba(137,40,40,0.01));
+}
+
+.nursery-image {
+	filter: drop-shadow(0px 100px 80px rgba(0,0,0,0.12)) drop-shadow(0px 64.8148px 46.8519px rgba(0,0,0,0.10)) drop-shadow(0px 38.5185px 25.4815px rgba(0,0,0,0.08)) drop-shadow(0px 20px 13px rgba(0,0,0,0.06)) drop-shadow(0px 8.14815px 6.51852px rgba(0,0,0,0.03)) drop-shadow(0px 1.85185px 3.14815px rgba(0,0,0,0.01));
+}
+
+.kvast-image {
+	filter: drop-shadow(0px 100px 80px rgba(153,92,24,0.12)) drop-shadow(0px 64.8148px 46.8519px rgba(153,92,24,0.10)) drop-shadow(0px 38.5185px 25.4815px rgba(153,92,24,0.08)) drop-shadow(0px 20px 13px rgba(153,92,24,0.06)) drop-shadow(0px 8.14815px 6.51852px rgba(153,92,24,0.03)) drop-shadow(0px 1.85185px 3.14815px rgba(153,92,24,0.01));
+}
+
+.background-change {
+	background: rgb(255,255,255);
+}
+
+@media (max-width: 1020px) {
+	.sketch-item {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.sketch-item-reverse {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.sketch-info {
+		text-align: center !important;
+		margin-bottom: 50px;
+	}
+
+	.sketch-info > hr {
+		margin: 0;
+		display: none;
+	}
+
+	.sketch-image {
+		width: 100%;
+	}
+
+	.sketches-compilation-title {
+		font-size: 10vw !important;
+	}
 }

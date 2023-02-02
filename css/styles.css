@@ -1455,3 +1455,11 @@ main {
 		font-size: 10vw !important;
 	}
 }
+
+.sketch-info-hytte {
+	margin-top: 60px;
+}
+
+.sketch-info-hytte._active {
+	margin-top: 0;
+}

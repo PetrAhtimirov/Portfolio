@@ -62,10 +62,14 @@ function getCoords(elem) {
 
 let parallax = function () {
     const parallaxContainers = document.querySelectorAll(".parallax-container");
+    let windowInnerWidth = window.innerWidth;
     if (parallaxContainers.length > 0) {
         window.addEventListener('scroll', parallaxOnScroll);
+    }
+    if (windowInnerWidth > 480) {
         window.addEventListener('scroll', scrollChangeBackground);
     }
+        
 }
 
 let parallaxOnScroll = function () {

@@ -64,6 +64,7 @@ let parallax = function () {
     const parallaxContainers = document.querySelectorAll(".parallax-container");
     if (parallaxContainers.length > 0) {
         window.addEventListener('scroll', parallaxOnScroll);
+        window.addEventListener('scroll', scrollChangeBackground);
     }
 }
 
@@ -93,9 +94,35 @@ let parallaxOnScroll = function () {
 
 /* Scroll Change Background Color */
 
+let currentColor = [[255, 255, 255], [255, 255, 255]];
+
 let scrollChangeBackground = function () {
-    const triggerItems = document.querySelectorAll();
+    let currentScroll = window.pageYOffset;
+    const triggerItems = document.querySelectorAll(".background-trigger");
+    const backgroundMain = document.querySelector(".background-change");
+    const colorarr = [[[255,255,255], [255,255,255]], 
+                      [[230,198,209], [251,239,224]],
+                      [[255,251,241], [216,220,231]],
+                      [[255,217,147], [255,243,237]], 
+                      [[255,255,255], [190,160,143]], 
+                      [[255,255,255], [255,255,255]]];
+    if (backgroundMain) {
+        for (let i = 0; i < triggerItems.length; i++) {
+            let elementCoord = getCoords(triggerItems[i]);
+            let elementCoordEnd = (elementCoord + triggerItems[i].scrollHeight);
+            if (currentScroll > elementCoord && currentScroll < elementCoordEnd) {
+                for (let k = 0; k < 2; k++) {
+                    for (let j = 0; j < 3; j++) {
+                        let colorChanging = (currentScroll - elementCoord)*((colorarr[i+1][k][j] - colorarr[i][k][j])/triggerItems[i].scrollHeight);
+                        currentColor[k][j] = colorarr[i][k][j] + colorChanging; 
+                    }
+                }
+                backgroundMain.style.background = 'linear-gradient('+(currentScroll-360*Math.floor(currentScroll/360))/12+'deg, rgb('+currentColor[0][0]+','+currentColor[0][1]+','+currentColor[0][2]+') 0%, rgb('+currentColor[1][0]+','+currentColor[1][1]+','+currentColor[1][2]+') 100%)';
+            }
+        }
+    }  
 }
+
 
 /* Scroll Animations */
 
@@ -208,9 +235,12 @@ let pageAnimOut = function (container) {
         top: "-120vh"
     }, {
         top: 0
-    }), gsap.to(container.querySelector("main"),  {
-        duration: 0.5,
-        transform: "translateY(300px) scale(0.85)"
+    }), gsap.fromTo(container.querySelector("main"),  {
+        duration: 0.2,
+        transform: "translateY(0)"
+    }, {
+        delay: 0.2,
+        transform: "translateY(300px)"
     })
 }
 
@@ -222,10 +252,10 @@ let pageAnimIn = function (container) {
         top: "100vh"
     }), gsap.fromTo(container.querySelector("main"),  {
         duration: 0.2,
-        transform: "translateY(-500px) scale(0.85)"
+        transform: "translateY(-300px)"
     }, {
         delay: 0.2,
-        transform: "translateY(0) scale(1)"
+        transform: "translateY(0)"
     })
 }
 

@@ -337,6 +337,10 @@ main {
 	.other-projects-container {
 		flex-direction: column;
 	}
+
+	.design-info > p {
+		font-size: 0.9rem !important;
+	}
 }
 
 @media (max-width: 720px) {
@@ -1069,6 +1073,7 @@ main {
 	animation: showText 0.8s ease normal both;
 	animation-delay: 1.2s;
 	color: #636363;
+	max-width: 550px;
 }
 
 .project-page-link {
@@ -1122,7 +1127,7 @@ main {
 
 .longshot-container {
 	margin-top: 100px;
-	border-radius: 12px;
+	border-radius: 25px;
 	overflow: hidden;
 	position: relative;
 }
@@ -1462,4 +1467,64 @@ main {
 
 .sketch-info-hytte._active {
 	margin-top: 0;
+}
+
+.design-info {
+	margin-top: 80px;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.design-info > p {
+	color: rgb(202, 205, 212);
+	font-size: 17px;
+    letter-spacing: 2px;
+    font-family: "Inter";
+	text-align: center;
+}
+
+.kv-image {
+	width: 100%;
+	border-radius: 30px;
+	position: sticky;
+    top: 16vh;
+	opacity: 0;
+	transition: 0.5s;
+	margin-bottom: 20vh;
+	-webkit-box-shadow: 0px 20px 52px 17px rgba(180, 191, 200, 0.2);
+	-moz-box-shadow: 0px 20px 52px 17px rgba(180, 191, 200, 0.2);
+	box-shadow: 0px 20px 52px 17px rgba(180, 191, 200, 0.2);
+}
+
+.kv-image:first-of-type {
+	opacity: 1 !important;
+}
+
+.kv-image:last-of-type {
+	opacity: 0 !important;
+}
+
+.site-structure {
+	position: sticky;
+	top: 88vh;
+	text-align: center;
+	font-family: "Inter";
+	font-size: 19px;
+}
+
+.image-collection {
+	margin-bottom: calc(20vh - 80px);
+}
+
+@media (max-width: 1000px) {
+	.kv-image {
+		display: none;
+		margin-bottom: 80px;
+	}
+
+	.kv-image:first-of-type {
+		display: block;
+	}
+	
 }

@@ -69,7 +69,7 @@ let parallax = function () {
     if (windowInnerWidth > 480) {
         window.addEventListener('scroll', scrollChangeBackground);
     }
-        
+    window.addEventListener('scroll', scrollImageShowing); 
 }
 
 let parallaxOnScroll = function () {
@@ -95,6 +95,20 @@ let parallaxOnScroll = function () {
     }
 }
 
+/* Scroll image showing */
+
+let scrollImageShowing = function () {
+    const showingItems = document.querySelectorAll(".kv-image");
+    let windowInnerHeight = window.innerHeight;
+
+    for (let i = 0; i < showingItems.length; i++) {
+        if (showingItems[i].getBoundingClientRect()['y'] < (0.16 * windowInnerHeight)) {
+            showingItems[i].style.opacity = "1";
+        } else {
+            showingItems[i].style.opacity = "0";
+        }
+    }
+}
 
 /* Scroll Change Background Color */
 

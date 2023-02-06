@@ -1298,6 +1298,12 @@ main {
 	max-width: none;
 }
 
+.sketches-header {
+	-webkit-box-shadow: 0px 11px 81px 27px rgba(130, 143, 194, 0.2);
+	-moz-box-shadow: 0px 11px 81px 27px rgba(130, 143, 194, 0.2);
+	box-shadow: 0px 11px 81px 27px rgba(130, 143, 194, 0.2);
+}
+
 .sketches-banner {
 	-webkit-box-shadow: 0px 17px 98px 31px rgba(140, 127, 100, 0.12);
 	-moz-box-shadow: 0px 17px 98px 31px rgba(140, 127, 100, 0.12);
@@ -1485,16 +1491,19 @@ main {
 }
 
 .kv-image {
+	height: 68vh;
 	width: 100%;
 	border-radius: 30px;
 	position: sticky;
     top: 16vh;
 	opacity: 0;
 	transition: 0.5s;
-	margin-bottom: 20vh;
+	margin-bottom: 10vh;
 	-webkit-box-shadow: 0px 20px 52px 17px rgba(180, 191, 200, 0.2);
 	-moz-box-shadow: 0px 20px 52px 17px rgba(180, 191, 200, 0.2);
 	box-shadow: 0px 20px 52px 17px rgba(180, 191, 200, 0.2);
+	object-fit: cover;
+	overflow: hidden;
 }
 
 .kv-image:first-of-type {
@@ -1507,7 +1516,7 @@ main {
 
 .site-structure {
 	position: sticky;
-	top: 88vh;
+	top: calc(74vh + 170px);
 	text-align: center;
 	font-family: "Inter";
 	font-size: 19px;

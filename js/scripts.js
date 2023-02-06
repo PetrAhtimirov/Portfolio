@@ -69,7 +69,7 @@ let parallax = function () {
     if (windowInnerWidth > 480) {
         window.addEventListener('scroll', scrollChangeBackground);
     }
-    window.addEventListener('scroll', scrollImageShowing); 
+    window.addEventListener('scroll', scrollImageShowing);
 }
 
 let parallaxOnScroll = function () {
@@ -102,7 +102,7 @@ let scrollImageShowing = function () {
     let windowInnerHeight = window.innerHeight;
 
     for (let i = 0; i < showingItems.length; i++) {
-        if (showingItems[i].getBoundingClientRect()['y'] < (0.16 * windowInnerHeight)) {
+        if ((showingItems[i].getBoundingClientRect()['y']) < (0.16 * windowInnerHeight)) {
             showingItems[i].style.opacity = "1";
         } else {
             showingItems[i].style.opacity = "0";
@@ -257,7 +257,7 @@ let pageAnimOut = function (container) {
         duration: 0.2,
         transform: "translateY(0)"
     }, {
-        delay: 0.2,
+        delay: 0.1,
         transform: "translateY(300px)"
     })
 }
@@ -269,10 +269,9 @@ let pageAnimIn = function (container) {
     }, {
         top: "100vh"
     }), gsap.fromTo(container.querySelector("main"),  {
-        duration: 0.2,
         transform: "translateY(-300px)"
     }, {
-        delay: 0.2,
+        duration: 0.5,
         transform: "translateY(0)"
     })
 }

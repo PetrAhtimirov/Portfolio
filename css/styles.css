@@ -1554,5 +1554,6 @@ main {
 }
 
 .outline-vid {
+	width: 100%;
 	max-width: 900px;
 }
